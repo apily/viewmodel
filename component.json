@@ -1,0 +1,17 @@
+{
+  "name": "viewmodel",
+  "repo": "apily/viewmodel",
+  "version": "0.0.1",
+  "description": "ViewModel component",
+  "keywords": ["HTML", "DOM", "MVC", "view", "viewmodel"],
+  "scripts": ["index.js"],
+  "dependencies": {
+    "apily/model": "*",
+    "apily/event-manager": "*",
+    "apily/delegate-manager": "*"
+  },
+  "development": {
+    "component/assert": "*"
+  },
+  "license": "MIT"
+}
