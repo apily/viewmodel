@@ -1,5 +1,5 @@
 var delegates = require('viewmodel');
-var Emitter = require('model');
+var Model = require('model');
 
 (function(){
   var el = document.getElementById('list-one');
