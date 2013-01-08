@@ -1,6 +1,6 @@
 {
   "name": "viewmodel",
-  "repo": "apily/viewmodel",
+  "repo": "component-mvc/viewmodel",
   "version": "0.0.1",
   "description": "ViewModel component",
   "keywords": ["HTML", "DOM", "MVC", "view", "viewmodel"],
