@@ -31,8 +31,8 @@ var Model = require('model');
  */
 
 function ViewModel(options) {
-  if (!(this instanceof View)) {
-    return new View(options);
+  if (!(this instanceof ViewModel)) {
+    return new ViewModel(options);
   }
   options = options || {};
   this.el = options.el || document.createElement('div');
