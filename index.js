@@ -18,21 +18,25 @@ module.exports = ViewModel;
 
 var events = require('event-manager');
 var delegates = require('delegate-manager');
+var Model = require('model');
 
 /*
  * ViewModel
  * Create a viewmodel.
- *
- * @param {Element} el element
- * @param {Object} model model
+ * 
+ * @param {Object} options
+ *   @param {Element} [options.el] element
+ *   @param {Object} [options.model] model
  * @return {ViewModel} a viewmodel
  */
 
-function ViewModel(el, model) {
-  if (!(this instanceof View)) return new View(el, model);
-
-  this.el = el;
-  this.model = model;
+function ViewModel(options) {
+  if (!(this instanceof View)) {
+    return new View(options);
+  }
+  options = options || {};
+  this.el = options.el || document.createElement('div');
+  this.model = options.model || new Model();
   this.events = delegates(el, this);
   this.messages = events(model, this);
 }
