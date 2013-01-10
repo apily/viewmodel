@@ -37,6 +37,6 @@ function ViewModel(options) {
   options = options || {};
   this.el = options.el || document.createElement('div');
   this.model = options.model || new Model();
-  this.events = delegates(el, this);
-  this.messages = events(model, this);
+  this.events = delegates(this.el, this);
+  this.messages = events(this.model, this);
 }
