@@ -1,3 +1,4 @@
+
 /*
  * viewmodel
  * ViewModel component
@@ -16,8 +17,7 @@ module.exports = ViewModel;
  * Module dependencies
  */
 
-var events = require('event-manager');
-var delegates = require('delegate-manager');
+var View = require('view');
 var Model = require('model');
 
 /*
@@ -34,9 +34,21 @@ function ViewModel(options) {
   if (!(this instanceof ViewModel)) {
     return new ViewModel(options);
   }
-  options = options || {};
-  this.el = options.el || document.createElement('div');
+  View.call(this, options);
+  
   this.model = options.model || new Model();
-  this.events = delegates(this.el, this);
-  this.messages = events(this.model, this);
+  this.listen(this.model, this.messages);
 }
+
+/**
+ * Inherit from `View`
+ */
+
+ViewModel.prototype = Object.create(View.prototype);
+ViewModel.prototype.constructor = ViewModel;
+
+/**
+ * messages
+ */
+
+ViewModel.prototype.messages = {};
